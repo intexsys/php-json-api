@@ -106,7 +106,7 @@ class DataAttributesHelper
 
             $keyName = self::transformToValidMemberName(RecursiveFormatterHelper::camelCaseToUnderscore($propertyName));
 
-            if (!empty($value[Serializer::CLASS_IDENTIFIER_KEY]) && empty($mappings[$value[Serializer::CLASS_IDENTIFIER_KEY]])) {
+            if (!empty($value[Serializer::CLASS_IDENTIFIER_KEY])) {
                 $copy = $value;
                 self::recursiveSetKeysToUnderScore($copy);
                 $attributes[$keyName] = $copy;
