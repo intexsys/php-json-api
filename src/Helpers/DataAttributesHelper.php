@@ -82,7 +82,7 @@ class DataAttributesHelper
         $idProperties = RecursiveFormatterHelper::getIdProperties($mappings, $type);
 
         foreach ($array as $propertyName => $value) {
-            $keyName = self::transformToValidMemberName(RecursiveFormatterHelper::camelCaseToUnderscore($propertyName));
+            $keyName = self::transformToValidMemberName($propertyName);
 
             if (\in_array($propertyName, $idProperties, true)) {
                 self::addIdPropertiesInAttribute($mappings, $type, $keyName, $value, $attributes);

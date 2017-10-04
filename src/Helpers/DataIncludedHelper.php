@@ -309,6 +309,10 @@ class DataIncludedHelper
     {
         return !empty($mappings[$parentType])
         && count($mappings[$parentType]->getIncludedResources()) > 0
-        && false === in_array($includeValue[Serializer::CLASS_IDENTIFIER_KEY], $mappings[$parentType]->getIncludedResources(), true);
+        && false === in_array(
+            isset($includeValue[Serializer::CLASS_IDENTIFIER_KEY]) ? $includeValue[Serializer::CLASS_IDENTIFIER_KEY] : null,
+            $mappings[$parentType]->getIncludedResources(),
+            true
+        );
     }
 }
